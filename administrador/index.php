@@ -1,15 +1,12 @@
-<?php
-if($_POST){
-    header('location:inicio.php');
-}
-?>
+<?php if($_POST){header("Location:inicio.php");}?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--css-->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../asset/css/style.css">
     
 
     <!--BOX ICON-->
@@ -22,22 +19,22 @@ if($_POST){
     <div class="login">
         <div class="login__content">
             <div class="login__img">
-                <img src="../img/login.svg" alt="">
+                <img src="../asset/img/login.svg" alt="">
             </div>
             <div class="login__forms">
-                <form action="" class="login__registre" id="login-in">
+                <form method="post" class="login__registre " id="login-in">
                     <h1 class="login__title">Login In</h1>
 
                     <div class="login__box">
                     <i class='bx bx-user login__icon'></i>
-                    <input type="text" placeholder="Username" class="login__input">
+                    <input name="nombre" type="text" placeholder="Username" class="login__input">
                     </div>
                     <div class="login__box">
                     <i class='bx bx-lock login__icon'></i>
-                    <input type="password" placeholder="Password" class="login__input">
+                    <input name="nombre" type="password" placeholder="Password" class="login__input">
                     </div>
                     <a href="#" class="login__forgot">forgot password?</a>
-                    <button type="submit" class="login__button" >Sing In</button>
+                    <input type="submit" class="login__button" value="Sing In">
                     
                     <div>
                         <span class="login__account">Don't have an Account?</span>
@@ -45,7 +42,7 @@ if($_POST){
                     </div>
                 </form>
 
-                <form mothod="POST" class="login__create none" id="login-up">
+                <form  class="login__create none" id="login-up">
                     <h1 class="login__title">Create Account</h1>
 
                     <div class="login__box">
@@ -60,7 +57,7 @@ if($_POST){
                     <i class='bx bx-lock login__icon'></i>
                     <input type="password" placeholder="Password" class="login__input">
                     </div>
-                    <a href="#" class="login__button">Sing Up</a>
+                    <input type="submit" class="login__button" value="Sing Up">
                     <div>
                         <span class="login__account">Already have a Account?</span>
                         <span class="login__signup" id="sign-in">Sing In</span>
@@ -75,7 +72,7 @@ if($_POST){
         </div>
     </div>
 </body>
-<script src="../js/login.js"></script>
-<script src="../js/main.js"></script>
+<script src="../asset/js/login.js"></script>
+<script src="../asset/js/main.js"></script>
 
 </html>
