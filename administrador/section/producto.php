@@ -32,6 +32,10 @@ switch($accion){
          break;
 }
 
+$sentenciaSQL = $conexion->prepare("SELECT * FROM producto");
+$sentenciaSQL->execute();
+$listaProducto=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 
@@ -85,14 +89,15 @@ switch($accion){
             </tr>
         </thead>
         <tbody>
+        <?php foreach($listaProducto as $producto) {?>
             <tr>
-                
-                <td>2</td>
-                <td>Nike Jordan</td>
-                <td>19.99</td>
-                <td>img.jpg</td>
+                <td><?php echo $producto['id']?></td>
+                <td><?php echo $producto['nombre'] ?></td>
+                <td><?php echo $producto['precio'] ?></td>
+                <td><?php echo $producto['img'] ?></td>
                 <td>Seleccionar |  Borrar</td>
             </tr>
+            <?php } ?>
             
         </tbody>
     </table>
